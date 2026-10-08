@@ -64,6 +64,12 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
+# Mattpocock skills patch
+
+When grilling, ask one question at a time.
+
+When implement, DO NOT commit until confimed.
+
 # Agent Instructions
 
 ## 语言
