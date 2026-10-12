@@ -70,6 +70,8 @@ When grilling, ask one question at a time.
 
 When implement, DO NOT commit until confimed.
 
+When a skill references `GLOSSARY.md`, it lives at `docs/GLOSSARY.md`, not the repo root.
+
 # Agent Instructions
 
 ## 语言
