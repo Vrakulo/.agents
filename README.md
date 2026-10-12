@@ -34,6 +34,12 @@ npx skills add xezzon/agent-skills -g
 ### [`pull-request-rules`](./skills/pull-request-rules)
 处理 GitHub Issue 和 Pull Request 的创建流程：先查找相似项，再读取并遵循目标仓库的模板、标签和必填元数据。
 
+## Memory
+
+[`memory/`](./memory) 存放需要跨项目、跨 session 复用的 agent 记忆文档。文件在本仓库内版本化，并通过 symlink 挂载到 `~/.agents/memory/`，供个人 `AGENTS.md` 以固定路径引用，对所有项目的 agent 生效。
+
+`memory/` 不属于 `npx skills` catalog，`npx skills add` 不会安装它。
+
 ## 目录结构
 
 ```
@@ -44,7 +50,9 @@ agent-skills/
 │   ├── plan-implement/
 │   │   └── SKILL.md
 │   └── pull-request-rules/
-│       └── SKILL.md
+│   └── SKILL.md
+├── memory/
+│   └── architecture-review-flow.md
 ├── LICENSE
 └── README.md
 ```
