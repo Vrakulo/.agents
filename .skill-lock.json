@@ -248,6 +248,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-10-09T11:10:03.640Z",
       "updatedAt": "2026-10-09T11:10:03.640Z"
+    },
+    "pull-request-rules": {
+      "source": "xezzon/.agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/xezzon/.agents.git",
+      "skillPath": "skills/pull-request-rules/SKILL.md",
+      "skillFolderHash": "d2803ad4faa81a438c0e2c4cecba51b72151d04b",
+      "installedAt": "2026-10-11T02:04:13.809Z",
+      "updatedAt": "2026-10-11T02:04:13.809Z"
     }
   },
   "dismissed": {
