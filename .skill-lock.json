@@ -257,6 +257,16 @@
       "pluginName": "andrej-karpathy-skills",
       "installedAt": "2026-10-12T01:01:37.736Z",
       "updatedAt": "2026-10-12T01:01:37.736Z"
+    },
+    "handoff": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/productivity/handoff/SKILL.md",
+      "skillFolderHash": "ce24892bd2d4b9e7fd5ac9b95c03175e18bef388",
+      "pluginName": "mattpocock-skills",
+      "installedAt": "2026-10-13T00:10:33.561Z",
+      "updatedAt": "2026-10-13T00:10:33.561Z"
     }
   },
   "dismissed": {
