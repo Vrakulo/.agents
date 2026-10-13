@@ -4,6 +4,11 @@ When grilling, ask one question at a time.
 
 When a skill puts `GLOSSARY.md` or `GLOSSARY-MAP.md` at the repo root, use `docs/` instead.
 
+In-progress artifacts go under `.scratch/` in the project root, not the OS temp dir. Keep each artifact directory out of git by listing it in `.scratch/.gitignore`.
+
+- **handoff**: save the handoff document to `.scratch/handoff/`.
+- **improve-codebase-architecture**: save the HTML report to `.scratch/architecture-review/`, and maintain `.scratch/architecture-review/status.md` — one row per candidate with its handling state, updated as candidates are resolved.
+
 # 语言
 
 1. **对话输出**：跟随用户的语言回复，默认中文。
