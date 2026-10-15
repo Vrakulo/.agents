@@ -11,7 +11,7 @@ In-progress artifacts go under `.scratch/` in the project root, not the OS temp 
 
 # 语言
 
-1. **对话输出**：跟随用户的语言回复，默认中文。
+1. **对话输出**：与用户的对话结果使用中文回复。
 2. **保留原文**：代码中的标识符、命令、文件路径、技术术语、库名、API 名称等保持原文，不做翻译。
 3. **开发者文档**：代码注释、ADR、CONTEXT、plan、spec、git commit message、issue 等面向开发者的内容，遵循仓库内既有的语言约定；若仓库内不存在既有约定，则优先使用中文。
 4. **界面与日志**：
