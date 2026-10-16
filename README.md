@@ -3,7 +3,7 @@
 个人 agent 配置仓库，做三件事：
 
 - 发布自维护的 skills，`npx skills add xezzon/.agents` 即可装到 Claude Code、Codex、Cursor 等受支持的编码 Agent。
-- 版本化本机在用的 agent 定义与全局 `AGENTS.md` 覆盖。
+- 版本化本机在用的 agent 定义、MCP 配置与全局 `AGENTS.md` 覆盖。
 - 存放跨项目、跨 session 复用的记忆文档。
 
 ## 目录结构
@@ -13,6 +13,7 @@
 ├── skills/                     # 发布目录，npx skills add 安装这里的内容
 ├── agents/                     # agent 定义，各自限定可加载的 skill
 ├── deprecated-skills/          # 已退役的 skill，仅供查阅，不再发布
+├── mcp.json                    # 各 harness 通用的 MCP server 记录
 ├── AGENTS.md                   # 全局覆盖指令，symlink 到 ~/.agents/AGENTS.md
 ├── .skill-lock.json            # npx skills 的安装记录，勿手改
 ├── LICENSE
@@ -39,6 +40,10 @@ npx skills add xezzon/.agents -g                    # 安装到用户级作用�
 - [`wondelai`](./agents/wondelai.md)：clean code、重构、遗留代码、文档等代码工艺与架构。
 
 每个 agent 只放行自己清单内的 skill。
+
+## MCP
+
+`mcp.json` 记录本机在用的 MCP server，采用通用的 `mcpServers` 结构，与具体 harness 无关。
 
 ## Memory
 
