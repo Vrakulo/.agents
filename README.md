@@ -34,6 +34,15 @@ npx skills add xezzon/agent-skills -g
 ### [`pull-request-rules`](./skills/pull-request-rules)
 处理 GitHub Issue 和 Pull Request 的创建流程：先查找相似项，再读取并遵循目标仓库的模板、标签和必填元数据。
 
+## Agents
+
+[`agents/`](./agents) 存放自定义 agent 定义（Markdown 正文 + YAML frontmatter），与 skill 一样可被各类编码 Agent 复用：
+
+- [`mattpocock.md`](./agents/mattpocock.md)：Matt Pocock 风格的工程流程（grilling → spec → tickets → implement → review → PR）。
+- [`wondelai.md`](./agents/wondelai.md)：Wondel 风格的代码工艺与架构（clean code、重构、遗留代码、文档）。
+
+每个 agent 只加载自己来源的 skills，其余一律拒绝。
+
 ## Memory
 
 [`memory/`](./memory) 存放需要跨项目、跨 session 复用的 agent 记忆文档。文件在本仓库内版本化，并通过 symlink 挂载到 `~/.agents/memory/`，供个人 `AGENTS.md` 以固定路径引用，对所有项目的 agent 生效。
@@ -43,16 +52,17 @@ npx skills add xezzon/agent-skills -g
 ## 目录结构
 
 ```
-agent-skills/
+.agents/
+├── agents/
+│   ├── mattpocock.md
+│   └── wondelai.md
 ├── skills/
-│   ├── plan-edit/
-│   │   └── SKILL.md
-│   ├── plan-implement/
-│   │   └── SKILL.md
 │   └── pull-request-rules/
-│   └── SKILL.md
-├── memory/
-│   └── architecture-review-flow.md
+│       └── SKILL.md
+├── deprecated-skills/
+│   ├── plan-edit/
+│   └── plan-implement/
+├── AGENTS.md
 ├── LICENSE
 └── README.md
 ```
