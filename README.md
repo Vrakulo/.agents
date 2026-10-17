@@ -38,14 +38,30 @@ npx skills add xezzon/.agents -g                    # 安装到用户级作用�
 
 - [`mattpocock`](./agents/mattpocock.md)：grilling → spec → tickets → implement → review → PR 的端到端工程流程。
 - [`wondelai`](./agents/wondelai.md)：clean code、重构、遗留代码、文档等代码工艺与架构。
+- [`device-pilot`](./agents/device-pilot.md)：操作浏览器与桌面完成任务，并做 UI 自动化与端到端测试。`mode: all`，既能当主 agent，也能被别的 agent 派活。
 
-每个 agent 只放行自己清单内的 skill。
+每个 agent 只放行自己清单内的 skill 和 MCP。
 
 ## MCP
 
 `mcp.json` 记录本机在用的 MCP server，采用通用的 `mcpServers` 结构，与具体 harness 无关。
 
 - `context7`：Upstash Context7，远程 HTTP 服务，按库名拉取最新文档和代码示例。匿名访问有速率限制，设置 `CONTEXT7_API_KEY` 可提高额度。
+- `playwright`：`@playwright/mcp`，本地 stdio 服务，以 DOM / 可访问性树驱动浏览器。当前配置为 headless + isolated + `1440x900` 视口 + `vision,devtools` caps，因此只能操作它自己拉起的浏览器实例，接触不到本机 Chrome 的登录态。
+
+### Midscene 不走 MCP
+
+Midscene 自 `1.10` 起[下线了全部 MCP server](https://midscenejs.com/zh/mcp.html)（`@midscene/mcp`、`@midscene/web-bridge-mcp`、`@midscene/computer-mcp` 等），官方推荐改用 Skills + 平台 CLI。最后一个含 MCP 支持的版本是 `1.9.8`。
+
+本仓库不记录任何 Midscene MCP 包。`device-pilot` 通过以下 skills 调用对应 CLI：
+
+| Skill | CLI | 平台 |
+| --- | --- | --- |
+| `browser-automation` | `npx @midscene/web` | 浏览器（Puppeteer / CDP / Bridge） |
+| `computer-automation` | `npx @midscene/computer` | macOS / Windows / Linux 桌面 |
+| `vitest-midscene-e2e` | — | E2E 测试工程 |
+
+Midscene 需要多模态模型才能运行，配置 `MIDSCENE_MODEL_API_KEY`、`MIDSCENE_MODEL_NAME`、`MIDSCENE_MODEL_BASE_URL`、`MIDSCENE_MODEL_FAMILY` 四个环境变量。推荐写进项目根目录的 `.env`（Midscene 会自动加载），记得确认 `.env` 已被 git 忽略。详见 [Midscene 模型配置](https://midscenejs.com/zh/skills.html#模型配置)。
 
 ## Memory
 

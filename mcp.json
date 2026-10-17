@@ -3,6 +3,21 @@
     "context7": {
       "type": "http",
       "url": "https://mcp.context7.com/mcp"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--isolated",
+        "--viewport-size",
+        "1440x900",
+        "--timeout-action",
+        "10000",
+        "--caps",
+        "vision,devtools"
+      ]
     }
   }
 }
