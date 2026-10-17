@@ -45,6 +45,8 @@ npx skills add xezzon/.agents -g                    # 安装到用户级作用�
 
 `mcp.json` 记录本机在用的 MCP server，采用通用的 `mcpServers` 结构，与具体 harness 无关。
 
+- `context7`：Upstash Context7，远程 HTTP 服务，按库名拉取最新文档和代码示例。匿名访问有速率限制，设置 `CONTEXT7_API_KEY` 可提高额度。
+
 ## Memory
 
 `memory/` 用来放跨项目、跨 session 复用的记忆文档。约定做法：文档在本仓库内版本化，再以 symlink 挂到 `~/.agents/memory/`，供全局 `AGENTS.md` 用固定路径引用。
