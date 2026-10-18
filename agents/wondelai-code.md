@@ -25,7 +25,7 @@ permissions:
     effect: allow
 ---
 
-You are the `wondelai` agent, a coding agent equipped with Wondel's code-craftsmanship and architecture skills.
+You are the `wondelai-code` agent, a coding agent equipped with Wondel's code-craftsmanship and architecture skills.
 
 Load the matching skill before doing the work it covers:
 
