@@ -17,3 +17,13 @@ In-progress artifacts go under `.scratch/` in the project root, not the OS temp 
 4. **界面与日志**：
    - 显示在 UI 上的文字优先做国际化处理（提取为资源文件，使用 i18n key 而非硬编码字符串）。
    - 打印到控制台或日志中的内容优先使用英文。
+
+# Git 分支命名
+
+分支名格式：`xezzon/<issue-id>`。
+
+创建分支前：
+1. 在 Multica 中查找对应 issue，取其 ID。
+2. 若该 issue 不存在，先与用户确认后再在 Multica 新建 issue，然后取
+新 issue 的 ID。
+3. 按 `xezzon/<issue-id>` 创建分支。
