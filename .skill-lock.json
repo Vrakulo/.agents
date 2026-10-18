@@ -339,6 +339,15 @@
       "skillFolderHash": "7b600195c1d3cdd277dc608c56384c86afb7ec11",
       "installedAt": "2026-10-18T01:14:39.000Z",
       "updatedAt": "2026-10-18T01:14:39.000Z"
+    },
+    "create-pull-request": {
+      "source": "cline/cline",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cline/cline.git",
+      "skillPath": ".agents/skills/create-pull-request/SKILL.md",
+      "skillFolderHash": "1bad999b8a6ebf8352b072b5d30fe6bd0f5ddc6e",
+      "installedAt": "2026-10-18T01:36:34.620Z",
+      "updatedAt": "2026-10-18T01:36:34.620Z"
     }
   },
   "dismissed": {
