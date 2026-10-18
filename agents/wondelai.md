@@ -3,9 +3,6 @@ description: Code craftsmanship and architecture in Wondel's style — clean cod
 mode: primary
 permissions:
   - action: skill
-    resource: "*"
-    effect: deny
-  - action: skill
     resource: clean-code
     effect: allow
   - action: skill

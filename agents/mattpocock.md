@@ -3,9 +3,6 @@ description: Engineering workflow in Matt Pocock's style — grill a plan, write
 mode: primary
 permissions:
   - action: skill
-    resource: "*"
-    effect: deny
-  - action: skill
     resource: grilling
     effect: allow
   - action: skill

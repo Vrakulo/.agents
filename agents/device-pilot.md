@@ -3,9 +3,6 @@ description: 操作设备与端到端测试。用 Playwright MCP 以 DOM/可访�
 mode: all
 permissions:
   - action: skill
-    resource: "*"
-    effect: deny
-  - action: skill
     resource: browser-automation
     effect: allow
   - action: skill
