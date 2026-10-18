@@ -304,6 +304,33 @@
       "installedAt": "2026-10-15T07:40:23.251Z",
       "updatedAt": "2026-10-15T07:40:23.251Z"
     },
+    "computer-automation": {
+      "source": "web-infra-dev/midscene-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/web-infra-dev/midscene-skills.git",
+      "skillPath": "skills/computer-automation/SKILL.md",
+      "skillFolderHash": "5c25099cd5052ecdefbc8a2332771536c7be6bac",
+      "installedAt": "2026-10-17T11:26:58.092Z",
+      "updatedAt": "2026-10-18T01:26:45.347Z"
+    },
+    "vitest-midscene-e2e": {
+      "source": "web-infra-dev/midscene-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/web-infra-dev/midscene-skills.git",
+      "skillPath": "skills/vitest-midscene-e2e/SKILL.md",
+      "skillFolderHash": "e77d573c79b364852a172cd9cf1ea0cc3ac24e19",
+      "installedAt": "2026-10-17T11:26:58.097Z",
+      "updatedAt": "2026-10-18T01:26:45.347Z"
+    },
+    "browser-automation": {
+      "source": "web-infra-dev/midscene-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/web-infra-dev/midscene-skills.git",
+      "skillPath": "skills/browser/SKILL.md",
+      "skillFolderHash": "392d533c4d4408762a24bae4b50d1d70ebf60e29",
+      "installedAt": "2026-10-17T11:27:14.608Z",
+      "updatedAt": "2026-10-18T01:26:45.345Z"
+    },
     "caveman-commit": {
       "source": "juliusbrussee/caveman",
       "sourceType": "github",
