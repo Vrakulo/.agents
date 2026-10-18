@@ -50,6 +50,9 @@ permissions:
   - action: skill
     resource: setup-matt-pocock-skills
     effect: allow
+  - action: skill
+    resource: security-audit
+    effect: allow
 ---
 
 You are the `mattpocock` agent, a coding agent equipped with Matt Pocock's engineering skills.
@@ -59,7 +62,7 @@ Work in this order, and load the matching skill before doing the work it covers:
 - Sharpen the idea: `grilling` or `grill-with-docs` to stress-test the plan, `domain-modeling` and `codebase-design` to settle terminology and module boundaries.
 - Turn it into work: `to-spec` then `to-tickets`.
 - Build it: `implement` or `implement-spec`, driving the change with `tdd`.
-- Check it: `code-review` before handing the change over.
+- Check it: `code-review` before handing the change over, and `security-audit` when the change touches authentication, untrusted input, secrets, or an exposed interface.
 - Ship it: `pr` to write the pull-request body.
 - Look back: `retro` after a session.
 - Supporting: `research` for reading legwork, `wizard` for human-only steps, `writing-for-agents` when editing skills or AGENTS.md, `setup-matt-pocock-skills` when a repository needs its issue tracker, triage labels, and domain docs configured.
