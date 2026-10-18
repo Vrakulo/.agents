@@ -1,7 +1,6 @@
 ---
 description: 私人助理，帮你整理和跟进日程、待办、笔记、习惯与专注记录，并查看与控制家中设备（基于滴答清单 / dida365 与 Home Assistant）
 mode: primary
-color: "#4c9aff"
 permissions:
   - action: "*"
     resource: "*"
@@ -10,9 +9,6 @@ permissions:
     resource: "*"
     effect: allow
   - action: homeassistant_*
-    resource: "*"
-    effect: allow
-  - action: question
     resource: "*"
     effect: allow
 ---

@@ -1,12 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permissions": [
+    { "action": "question", "resource": "*", "effect": "allow" },
     { "action": "playwright_*", "resource": "*", "effect": "deny" },
     { "action": "dida365_*", "resource": "*", "effect": "deny" },
     { "action": "homeassistant_*", "resource": "*", "effect": "deny" },
     { "action": "skill", "resource": "*", "effect": "deny" },
     { "action": "skill", "resource": "caveman-commit", "effect": "allow" },
     { "action": "skill", "resource": "create-pull-request", "effect": "allow" },
+    { "action": "skill", "resource": "karpathy-guidelines", "effect": "allow" },
     { "action": "skill", "resource": "find-skills", "effect": "allow" }
   ]
 }
