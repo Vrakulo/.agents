@@ -53,9 +53,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/addyosmani/agent-skills.git",
       "skillPath": "skills/performance-optimization/SKILL.md",
-      "skillFolderHash": "c0cf6ae718e8552be7538a1cb6ea7f941a273359",
+      "skillFolderHash": "c924947ef20bdf80fe7a0af2267e02215ecea4b8",
       "installedAt": "2026-10-13T08:34:29.025Z",
-      "updatedAt": "2026-10-13T08:34:29.025Z"
+      "updatedAt": "2026-10-20T07:31:44.561Z"
     },
     "deprecation-and-migration": {
       "source": "addyosmani/agent-skills",
