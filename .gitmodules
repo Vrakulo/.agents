@@ -1,0 +1,24 @@
+[submodule "vendor/mattpocock-skills"]
+	path = vendor/mattpocock-skills
+	url = https://github.com/mattpocock/skills.git
+	shallow = true
+[submodule "vendor/addyosmani-agent-skills"]
+	path = vendor/addyosmani-agent-skills
+	url = https://github.com/addyosmani/agent-skills.git
+	shallow = true
+[submodule "vendor/wondelai-skills"]
+	path = vendor/wondelai-skills
+	url = https://github.com/wondelai/skills.git
+	shallow = true
+[submodule "vendor/cloudflare-skills"]
+	path = vendor/cloudflare-skills
+	url = https://github.com/cloudflare/skills.git
+	shallow = true
+[submodule "vendor/midscene-skills"]
+	path = vendor/midscene-skills
+	url = https://github.com/web-infra-dev/midscene-skills.git
+	shallow = true
+[submodule "vendor/phuryn-pm-skills"]
+	path = vendor/phuryn-pm-skills
+	url = https://github.com/phuryn/pm-skills.git
+	shallow = true

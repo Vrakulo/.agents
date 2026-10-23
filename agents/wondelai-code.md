@@ -3,10 +3,13 @@ description: Code craftsmanship and architecture in Wondel's style — clean cod
 mode: primary
 permissions:
   - action: skill
+    resource: working-with-legacy-code
+    effect: allow
+  - action: skill
     resource: clean-code
     effect: allow
   - action: skill
-    resource: pragmatic-programmer
+    resource: refactoring-patterns
     effect: allow
   - action: skill
     resource: software-design-philosophy
@@ -15,10 +18,7 @@ permissions:
     resource: clean-architecture
     effect: allow
   - action: skill
-    resource: refactoring-patterns
-    effect: allow
-  - action: skill
-    resource: working-with-legacy-code
+    resource: pragmatic-programmer
     effect: allow
   - action: skill
     resource: technical-documentation

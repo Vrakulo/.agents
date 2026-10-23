@@ -32,6 +32,10 @@
         "client_id": "http://127.0.0.1:19876",
         "callback_port": 19876
       }
+    },
+    "cloudflare": {
+      "type": "remote",
+      "url": "https://mcp.cloudflare.com/mcp"
     }
   }
 }
