@@ -40,7 +40,6 @@ ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/wizard" "$A/wizard"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/productivity/writing-for-agents" "$A/writing-for-agents"
 
 # addyosmani/agent-skills
-ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/performance-optimization" "$A/performance-optimization"
 ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/deprecation-and-migration" "$A/deprecation-and-migration"
 ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/code-review-and-quality" "$A/code-review-and-quality"
 ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/code-simplification" "$A/code-simplification"
