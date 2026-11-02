@@ -7,7 +7,6 @@ When a skill puts `GLOSSARY.md` or `GLOSSARY-MAP.md` at the repo root, use `docs
 In-progress artifacts go under `.scratch/` in the project root, not the OS temp dir. Keep each artifact directory out of git by listing it in `.scratch/.gitignore`.
 
 - **handoff**: save the handoff document to `.scratch/handoff/`.
-- **improve-codebase-architecture**: save the HTML report to `.scratch/architecture-review/`, and maintain `.scratch/architecture-review/status.md` — one row per candidate with its handling state, updated as candidates are resolved.
 
 # 语言
 
