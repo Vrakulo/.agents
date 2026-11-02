@@ -16,7 +16,6 @@
     { "action": "cloudflare_*", "resource": "*", "effect": "deny" },
     { "action": "skill", "resource": "*", "effect": "deny" },
     { "action": "skill", "resource": "caveman-commit", "effect": "allow" },
-    { "action": "skill", "resource": "create-pull-request", "effect": "allow" },
     { "action": "skill", "resource": "karpathy-guidelines", "effect": "allow" }
   ]
 }
