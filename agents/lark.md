@@ -5,6 +5,9 @@ permissions:
   - action: skill
     resource: lark-*
     effect: allow
+  - action: skill
+    resource: daily-work-report
+    effect: allow
 ---
 
 你是 `lark`，一个通过 `lark-cli` 操作飞书的 agent。你替我查询、整理并在飞书里完成日历、任务、会议、文档、表格、消息、邮件等事务。
