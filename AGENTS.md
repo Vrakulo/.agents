@@ -4,9 +4,11 @@ When grilling, ask one question at a time.
 
 When a skill puts `GLOSSARY.md` or `GLOSSARY-MAP.md` at the repo root, use `docs/` instead.
 
-In-progress artifacts go under `.scratch/` in the project root, not the OS temp dir. Keep each artifact directory out of git by listing it in `.scratch/.gitignore`.
-
 - **handoff**: save the handoff document to `.scratch/handoff/`.
+
+# 草稿目录
+
+`.scratch/` 是项目根目录下的草稿文件夹，用于存放进行中的产物，不使用操作系统临时目录。`.scratch/.gitignore` 的默认内容为 `*`，忽略目录内的所有文件。
 
 # 语言
 
