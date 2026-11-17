@@ -11,7 +11,7 @@ description: Run a project's toolchain inside a container instead of on the host
 
 1. **识别语言与项目根目录**。一个仓库可能有多种语言，每种语言单独跑一个容器。
 2. **选镜像与版本**。查下面的对照表；表里没有的语言走「未列出的语言」。版本从项目配置读，不写死在本 skill 里。
-3. **挂载目录**。项目根目录挂到容器工作目录，全局缓存目录挂到镜像内对应路径，临时文件落到 `.scratch/`。
+3. **挂载目录**。项目根目录挂到容器工作目录，全局缓存目录挂到镜像内对应路径，临时文件落到 `.scratch/`。uid 映射按「用户与文件属主」处理，不要让容器写出宿主用户改不了、删不掉的文件。
 4. **运行并清理**。每条命令一个容器，`--rm` 立即回收；需要常驻的服务用 `--name`，结束后显式删除。
 5. **报告回退**。只有容器确实跑不了才用本地工具链，并说明原因与在宿主机执行过的命令。
 
@@ -53,6 +53,29 @@ description: Run a project's toolchain inside a container instead of on the host
 | Python | `$PIP_CACHE_DIR`（`/root/.cache/pip`）、`$UV_CACHE_DIR` | `~/.cache/pip`、`~/.cache/uv` |
 
 以宿主机 uid 运行时，镜像内的 root 家目录不可写：把所有缓存变量指到挂载点（如 `/cache/...`），或设 `HOME=/tmp`。
+
+## 用户与文件属主
+
+rootless 运行时有 uid 映射：容器 0 对应宿主当前用户，容器 1 起对应 `/etc/subuid` 里的 subuid（通常从 100000 起）。
+
+所以在 rootless podman 下只传 `--user "$(id -u):$(id -g)"` 并不等于以自己身份运行：它把容器 uid 1000 映射到宿主的 subuid（如 100999）。容器写出的文件属主就是 100999，部分工具显示为 nobody；容器新建的目录同样归 100999，宿主用户没有写权限，`rm -rf` 会报权限不够。
+
+处理规则：
+
+- podman 一律加 `--userns=keep-id`，把宿主 uid 原样映射进容器。与 `--user "$(id -u):$(id -g)"` 同时传也没问题。
+- rootful Docker 的 `--user "$(id -u):$(id -g)"` 本来就是对的，别加 `--userns`。
+- rootless Docker 不要传 `--user`，它默认把容器 root 映射到宿主用户；传了就会掉到 subuid 上。
+- 容器内需要 root 权限时用 `--userns=keep-id:uid=0,gid=0`。
+- 不要用 `-v ...:U`：rootless 下它把宿主目录 chown 成 subuid，问题更严重。
+- 需要补充组（如 docker socket）时用 `--group-add keep-groups`。
+
+已经产生的 subuid 残留这样清理：
+
+```bash
+podman unshare rm -rf <路径>
+```
+
+`podman unshare` 进入的就是那个映射命名空间，里面等同于容器 root。rootless Docker 的等价做法是起一个容器以 root 删除挂载进来的文件。不要用 `sudo rm`，那会连同缓存目录的属主一起改掉。
 
 ## 镜像源
 
@@ -131,9 +154,13 @@ Gradle 不读 `settings.xml`，需要镜像时在 `init.gradle` 里替换 `repos
 
 ```bash
 RUNTIME=$(command -v podman || command -v docker)
+IDFLAGS=(--user "$(id -u):$(id -g)")
+if $RUNTIME --version 2>/dev/null | grep -q podman; then
+  IDFLAGS=(--userns=keep-id --user "$(id -u):$(id -g)")
+fi
 mkdir -p .scratch/tmp
 $RUNTIME run --rm \
-  --user "$(id -u):$(id -g)" \
+  "${IDFLAGS[@]}" \
   -v "$PWD:/workspace" -w /workspace \
   -v "$HOME/.cargo:/usr/local/cargo" \
   -v "$HOME/.rustup:/usr/local/rustup" \
@@ -146,6 +173,7 @@ $RUNTIME run --rm \
   cargo test
 ```
 
+- `IDFLAGS` 的 podman 分支带 `--userns=keep-id`，保证写出的文件属主是宿主用户；细节见「用户与文件属主」。非 podman 的 rootless Docker 还要去掉 `--user`。
 - 一次性命令用 `--rm`；需要交互再加 `-it`。
 - 常驻服务用 `--name <project>-<service>`，结束后 `$RUNTIME rm -f`。
 - 临时文件通过把 `.scratch/tmp` 挂到 `/tmp` 留在 `.scratch/` 下。
