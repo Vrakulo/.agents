@@ -17,7 +17,6 @@ fi
 # 自有
 ln -sfn "$REPO/skills/pr-feedback" "$A/pr-feedback"
 ln -sfn "$REPO/skills/pull-request-rules" "$A/pull-request-rules"
-ln -sfn "$REPO/skills/container-runtime" "$A/container-runtime"
 
 # mattpocock/skills
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/code-review" "$A/code-review"
