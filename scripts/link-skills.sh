@@ -27,19 +27,15 @@ ln -sfn "$REPO/vendor/mattpocock-skills/skills/productivity/grilling" "$A/grilli
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/implement" "$A/implement"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/implement-spec" "$A/implement-spec"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/pr" "$A/pr"
-ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/retro" "$A/retro"
-ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/research" "$A/research"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/setup-matt-pocock-skills" "$A/setup-matt-pocock-skills"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/tdd" "$A/tdd"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/to-spec" "$A/to-spec"
 ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/to-tickets" "$A/to-tickets"
-ln -sfn "$REPO/vendor/mattpocock-skills/skills/engineering/wizard" "$A/wizard"
-ln -sfn "$REPO/vendor/mattpocock-skills/skills/productivity/writing-for-agents" "$A/writing-for-agents"
 
 # addyosmani/agent-skills
-ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/deprecation-and-migration" "$A/deprecation-and-migration"
 ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/code-review-and-quality" "$A/code-review-and-quality"
 ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/code-simplification" "$A/code-simplification"
+ln -sfn "$REPO/vendor/addyosmani-agent-skills/skills/deprecation-and-migration" "$A/deprecation-and-migration"
 
 # wondelai/skills
 ln -sfn "$REPO/vendor/wondelai-skills/clean-architecture" "$A/clean-architecture"
