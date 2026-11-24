@@ -16,6 +16,7 @@
     { "action": "cloudflare_*", "resource": "*", "effect": "deny" },
     { "action": "skill", "resource": "*", "effect": "deny" },
     { "action": "skill", "resource": "commit-work", "effect": "allow" },
+    { "action": "skill", "resource": "wizard", "effect": "allow" },
     { "action": "skill", "resource": "karpathy-guidelines", "effect": "allow" }
   ]
 }
